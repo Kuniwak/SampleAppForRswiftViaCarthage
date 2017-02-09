@@ -12,6 +12,8 @@
 		628D168B1E4C6F9900A5612C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628D16891E4C6F9900A5612C /* Main.storyboard */; };
 		628D168D1E4C6F9900A5612C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 628D168C1E4C6F9900A5612C /* Assets.xcassets */; };
 		628D16901E4C6F9900A5612C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 628D168E1E4C6F9900A5612C /* LaunchScreen.storyboard */; };
+		628D16991E4C70FC00A5612C /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628D16981E4C70FC00A5612C /* Rswift.framework */; };
+		62DD9F191E4C729800E89675 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DD9F181E4C729800E89675 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		628D168C1E4C6F9900A5612C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		628D168F1E4C6F9900A5612C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		628D16911E4C6F9900A5612C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		628D16981E4C70FC00A5612C /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		62DD9F181E4C729800E89675 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Resources/R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				628D16991E4C70FC00A5612C /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				628D16841E4C6F9900A5612C /* SampleAppForRswiftViaCarthage */,
 				628D16831E4C6F9900A5612C /* Products */,
+				628D16971E4C70FC00A5612C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +60,7 @@
 		628D16841E4C6F9900A5612C /* SampleAppForRswiftViaCarthage */ = {
 			isa = PBXGroup;
 			children = (
+				62DD9F171E4C728700E89675 /* Resources */,
 				628D16851E4C6F9900A5612C /* AppDelegate.swift */,
 				628D16871E4C6F9900A5612C /* ViewController.swift */,
 				628D16891E4C6F9900A5612C /* Main.storyboard */,
@@ -64,6 +71,22 @@
 			path = SampleAppForRswiftViaCarthage;
 			sourceTree = "<group>";
 		};
+		628D16971E4C70FC00A5612C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				628D16981E4C70FC00A5612C /* Rswift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62DD9F171E4C728700E89675 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62DD9F181E4C729800E89675 /* R.generated.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 628D16941E4C6F9900A5612C /* Build configuration list for PBXNativeTarget "SampleAppForRswiftViaCarthage" */;
 			buildPhases = (
+				62DD9F161E4C71BF00E89675 /* ShellScript */,
 				628D167E1E4C6F9900A5612C /* Sources */,
 				628D167F1E4C6F9900A5612C /* Frameworks */,
 				628D16801E4C6F9900A5612C /* Resources */,
@@ -131,6 +155,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62DD9F161E4C71BF00E89675 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\"$SRCROOT/rswift-3.2.0/rswift\" \"$SRCROOT/SampleAppForRswiftViaCarthage/Resources\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		628D167E1E4C6F9900A5612C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +178,7 @@
 			files = (
 				628D16881E4C6F9900A5612C /* ViewController.swift in Sources */,
 				628D16861E4C6F9900A5612C /* AppDelegate.swift in Sources */,
+				62DD9F191E4C729800E89675 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +301,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SampleAppForRswiftViaCarthage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SampleAppForRswiftViaCarthage;
@@ -272,6 +317,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SampleAppForRswiftViaCarthage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SampleAppForRswiftViaCarthage;
@@ -299,6 +348,7 @@
 				628D16961E4C6F9900A5612C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

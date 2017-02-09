@@ -9,17 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    static func create() -> ViewController {
+        guard let viewController = R.storyboard.main.viewController() else {
+            fatalError("Cannot instantiate ViewController by storyboard")
+        }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        return viewController
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
